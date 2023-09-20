@@ -646,10 +646,13 @@ const Card = ({data, index}) => {
       </View>
       <View>
         <Text style={{fontSize: 10, fontFamily: 'Poppins-Light'}}>
-          {'Day     1'}
+          {'Last Day : '}
+          {data.lastDate}
         </Text>
         <Text style={{fontSize: 10, fontFamily: 'Poppins-Light'}}>
-          {'Time   20 min'}
+          {'Time :  '}
+          {data.time}
+          {' min'}
         </Text>
       </View>
       <View
@@ -781,6 +784,8 @@ const data = [
   {
     name: 'Cycling',
     status: 85,
+    lastDate: '19/09',
+    time: 45,
     image: cycle,
     lightColor: '#f8e4d9',
     color: '#fcf1ea',
@@ -789,6 +794,8 @@ const data = [
   {
     name: 'Walking',
     status: 25,
+    lastDate: '19/09',
+    time: 35,
     image: walk,
     lightColor: '#d7f0f7',
     color: '#e8f7fc',
@@ -797,6 +804,8 @@ const data = [
   {
     name: 'Yoga',
     status: 85,
+    lastDate: '19/09',
+    time: 55,
     image: yoga,
     lightColor: '#dad5fe',
     color: '#e7e3ff',
