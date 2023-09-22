@@ -374,10 +374,12 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import * as Progress from 'react-native-progress';
+import AgendaCal from './src/screens/AgendaCal';
 const headerImage = require('./src/assets/images/header.jpg');
 const notification = require('./src/assets/images/Notification.png');
 const banner = require('./src/assets/images/BG.png');
@@ -404,9 +406,10 @@ const App = () => {
         <ScrollView>
           <View style={styles.screen}>
             <Header />
-            <Banner />
+            {/* <Banner /> */}
+            <AgendaCal />
           </View>
-          <View style={{marginHorizontal: '3%'}}>
+          {/* <View style={{marginHorizontal: '3%'}}>
             <Label>Your Activities</Label>
             <View style={{flexDirection: 'row'}}>
               {data.map((item, index) => (
@@ -434,7 +437,7 @@ const App = () => {
                 <VideoPlay index={index} />
               ))}
             </View>
-          </View>
+          </View> */}
         </ScrollView>
       </SafeAreaView>
       <BottomTab />
@@ -487,16 +490,18 @@ const BottomButton = ({image, style, imageStyle}) => (
         },
         style,
       ]}>
-      <Image
-        source={image}
-        style={[
-          {
-            height: image === plus ? 40 : 20,
-            width: image === plus ? 40 : 20,
-          },
-          imageStyle,
-        ]}
-      />
+      <TouchableOpacity onPress={() => {}}>
+        <Image
+          source={image}
+          style={[
+            {
+              height: image === plus ? 40 : 20,
+              width: image === plus ? 40 : 20,
+            },
+            imageStyle,
+          ]}
+        />
+      </TouchableOpacity>
     </View>
     {image === home && (
       <View
@@ -727,6 +732,7 @@ const HeaderTitle = () => (
 );
 
 const Label = ({children}) => <Text style={styles.label}>{children}</Text>;
+
 const styles = StyleSheet.create({
   container: {flex: 1},
   header: {
